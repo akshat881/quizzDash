@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my app</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    .b {
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <section class="vh-100" style="background-color: #4B515D;">
+
+    <div class="container py-5 h-100">
+
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+          <form action="/api" method="post">
+            <div class="input-group rounded mb-3">
+              <input type="search" class="form-control rounded" placeholder="City" aria-label="Search"
+                aria-describedby="search-addon" name="city" />
+              <button type="Submit" onclick="myFunction()" name="Submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <div class="card" style="color: #4B515D; border-radius: 35px;">
+            <div class="card-body p-4">
+
+              <div class="d-flex">
+                <h6 class="flex-grow-1"id="contri">{{pla}}</h6>
+                <h6>15:07</h6>
+              </div>
+
+              <div class="d-flex flex-column text-center mt-5 mb-4">
+                <h6 class="display-4 mb-0 font-weight-bold" id="tmp"style="color: #1C2331;">{{te}}</h6>
+                <span class="small" id="statu"style="color: #868B94">{{do}}</span>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1" style="font-size: 1rem;">
+                  <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
+                    </span></div>
+                  <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1" id="humi">{{pr}}</span>
+                  </div>
+                  <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 0.2h </span>
+                  </div>
+                </div>
+                <div>
+                  <img src="{{img}}" width="100px">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script type="text/javascript">
+     
+  
+   
+    const temp = document.getElementById("tmp");
+    temp.innerText="{{temp1}}";
+     const country = document.getElementById("contri");
+      country.innerText="{{place}}";
+      const status = document.getElementById("statu");
+       status.innerText="{{des}}";
+       const humidit = document.getElementById("humi");
+        humidit.innerText="{{press}}"+"%";
+        const img = document.getElementById("demo");
+         temp.innerText="{{temp1}}";
+         console.log('{{temp1}}');
+  
+    if ("error" === "{{er}}") {
+      Swal.fire(
+        'Sorry',
+        'CITY NOT FOUND',
+        'error'
+      )
+    }
+
+  </script>
+</body>
+
+</html>

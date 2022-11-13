@@ -1,0 +1,19 @@
+{
+  "name": "mongocon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js -e js,hbs"
+  },
+  "author": "akshat",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.5.5",
+    "nodemon": "^2.0.19",
+    "sweetalert2": "^11.4.32",
+    "xlsx": "^0.18.5"
+  }
+}
