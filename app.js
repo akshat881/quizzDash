@@ -30,7 +30,7 @@ app.post("/api",(req,res)=>{
        
          console.log(weatherData)
          if(weatherData.cod==='404'){
-            console.log('hello');
+            
             res.render("wether",{er:"error"});
             
          }
